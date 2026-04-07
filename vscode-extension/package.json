@@ -18,7 +18,6 @@
   },
   "homepage": "https://github.com/Syscobyte-AB/PowerBI-MCP#readme",
   "license": "MIT",
-  "icon": "images/icon.png",
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
