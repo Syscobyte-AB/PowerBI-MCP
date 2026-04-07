@@ -20,7 +20,7 @@ try {
 const TENANT_ID     = process.env.PBI_TENANT_ID;
 const CLIENT_ID     = process.env.PBI_CLIENT_ID;
 const CLIENT_SECRET = process.env.PBI_CLIENT_SECRET; // Optional — omit to use interactive device code login
-const PBI_BASE      = "https://api.powerbi.com/v1.0/myorg";
+const PBI_BASE      = process.env.PBI_BASE_URL || "https://api.powerbi.com/v1.0/myorg";
 const SCOPE         = ["https://analysis.windows.net/powerbi/api/.default"];
 
 if (!TENANT_ID || !CLIENT_ID) {
@@ -76,6 +76,9 @@ if (AUTH_MODE === "service_principal") {
 
 // ── Token acquisition ─────────────────────────────────────────────────────────
 async function getAccessToken() {
+  // Test / CI override — bypass MSAL entirely with a pre-issued token
+  if (process.env.PBI_ACCESS_TOKEN) return process.env.PBI_ACCESS_TOKEN;
+
   if (AUTH_MODE === "service_principal") {
     const result = await spClient.acquireTokenByClientCredential({ scopes: SCOPE });
     if (!result?.accessToken) throw new Error("Failed to acquire Power BI access token (service principal)");
