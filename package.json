@@ -1,0 +1,54 @@
+{
+  "name": "powerbi-mcp-server",
+  "version": "1.0.0",
+  "description": "Power BI MCP server for Claude Code — query datasets, run DAX, trigger refreshes via natural language",
+  "type": "module",
+  "main": "index.js",
+  "bin": {
+    "powerbi-mcp-server": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "powerbi",
+    "power-bi",
+    "claude",
+    "claude-code",
+    "microsoft",
+    "azure",
+    "dax",
+    "analytics"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_GITHUB_USERNAME/powerbi-mcp-server.git"
+  },
+  "homepage": "https://github.com/YOUR_GITHUB_USERNAME/powerbi-mcp-server#readme",
+  "bugs": {
+    "url": "https://github.com/YOUR_GITHUB_USERNAME/powerbi-mcp-server/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "index.js",
+    "README.md",
+    "LICENSE",
+    ".env.example"
+  ],
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "@azure/msal-node": "^2.0.0",
+    "node-fetch": "^3.0.0"
+  },
+  "optionalDependencies": {
+    "dotenv": "^16.0.0"
+  }
+}
