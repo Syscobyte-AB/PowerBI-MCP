@@ -1,0 +1,56 @@
+{
+  "name": "powerbi-mcp",
+  "displayName": "Power BI MCP",
+  "description": "Connect Claude Code to Power BI — setup wizard, secure credential storage, one-click MCP configuration",
+  "version": "1.0.0",
+  "publisher": "syscobyte-ab",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": ["Other"],
+  "keywords": ["power bi", "mcp", "claude", "claude code", "azure", "analytics"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Syscobyte-AB/PowerBI-MCP.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Syscobyte-AB/PowerBI-MCP/issues"
+  },
+  "homepage": "https://github.com/Syscobyte-AB/PowerBI-MCP#readme",
+  "license": "MIT",
+  "icon": "images/icon.png",
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "powerbi-mcp.setup",
+        "title": "Power BI MCP: Setup / Reconfigure"
+      },
+      {
+        "command": "powerbi-mcp.testConnection",
+        "title": "Power BI MCP: Test Connection"
+      },
+      {
+        "command": "powerbi-mcp.clearCredentials",
+        "title": "Power BI MCP: Clear Credentials"
+      },
+      {
+        "command": "powerbi-mcp.showStatus",
+        "title": "Power BI MCP: Show Status"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package",
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "@types/vscode": "^1.74.0",
+    "@vscode/vsce": "^2.0.0",
+    "typescript": "^5.0.0"
+  }
+}
