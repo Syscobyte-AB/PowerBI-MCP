@@ -3,7 +3,7 @@
   "displayName": "Power BI MCP",
   "description": "Connect Claude Code to Power BI — setup wizard, secure credential storage, one-click MCP configuration",
   "version": "1.0.0",
-  "publisher": "syscobyte-ab",
+  "publisher": "mks786",
   "engines": {
     "vscode": "^1.74.0"
   },
